@@ -1,0 +1,6 @@
+name: SPM
+authors: [spirolad, SorWayHD]
+version: 1.0
+main: fr.spirolad.crafter.Crafter
+commands:
+  prefix:

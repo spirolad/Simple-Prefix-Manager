@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SuperiorMaven" />
         <module name="SuperiorCrafter" />
+        <module name="SuperiorMaven" />
+        <module name="Simple-Prefix-Manager" />
       </profile>
     </annotationProcessing>
   </component>

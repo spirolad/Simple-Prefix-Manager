@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Simple-Prefix-Manager:jar">
+    <output-path>$USER_HOME$/Desktop/minecraft local/plugins</output-path>
+    <root id="archive" name="Simple-Prefix-Manager.jar">
+      <element id="module-output" name="Simple-Prefix-Manager" />
+    </root>
+  </artifact>
+</component>

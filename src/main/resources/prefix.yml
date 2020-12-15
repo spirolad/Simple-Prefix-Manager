@@ -1,0 +1,25 @@
+prefix-list:
+  player:
+    format-chat: "&7Player"
+    format-tab: "&7Player"
+    format-name: "&7Player"
+    color: "&f"
+    hideTab: false
+    hideName: false
+    hideChat: false
+  moderator:
+    format-chat: "&9Moderator"
+    format-tab: "&9Modo"
+    format-name: "&9Modo"
+    color: "&3"
+    hideTab: false
+    hideName: false
+    hideChat: false
+  administrator:
+    format-chat: "&cAdministrator"
+    format-tab: "&cAdmin"
+    format-name: "&cAdmin"
+    color: "&c"
+    hideTab: false
+    hideName: false
+    hideChat: false

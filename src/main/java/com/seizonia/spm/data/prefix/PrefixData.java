@@ -2,7 +2,7 @@ package com.seizonia.spm.data.prefix;
 
 public class PrefixData {
 
-    private String name;
+    private final String name;
     private String prefixTab, prefixChat, prefixName, color;
     private boolean hideTab, hideChat, hideName;
 

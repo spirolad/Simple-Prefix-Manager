@@ -1,26 +1,28 @@
 package com.seizonia.spm;
 
-import com.seizonia.spm.data.message.MessageLoadder;
+import com.seizonia.spm.data.DataMain;
+import com.seizonia.spm.listener.PlayerJoin;
+import com.seizonia.spm.listener.PlayerQuit;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.Configuration;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import sun.misc.IOUtils;
 
 import java.io.*;
-import java.net.URL;
 
 public class PrefixMain extends JavaPlugin {
 
     private static PrefixMain instance;
+    private DataMain dataMain;
+
+    public static final String NMS_VERSION = Bukkit.getServer().getClass().getPackage().getName().substring(23);
 
     @Override
     public void onEnable() {
         instance = this;
+        this.dataMain = new DataMain(getConfig());
+        dataMain.loadPrefix();
         loadFileRessource();
-        System.out.println(MessageLoadder.getMessage("leave"));
+        loadListener();
     }
 
     @Override
@@ -36,9 +38,16 @@ public class PrefixMain extends JavaPlugin {
         }
         File message = new File(dataFolder.getPath(), "messages.yml");
         File config = new File(dataFolder.getPath(), "config.yml");
+        File prefix = new File(dataFolder.getPath(), "prefix.yml");
         copyFileRessources(message, "messages");
         copyFileRessources(config, "config");
+        copyFileRessources(prefix, "prefix");
 
+    }
+
+    private void loadListener(){
+        getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuit(), this);
     }
 
     private void copyFileRessources(File destination, String ressourceName){
@@ -87,7 +96,7 @@ public class PrefixMain extends JavaPlugin {
         }
     }
 
-
+    public DataMain getDataMain() { return dataMain; }
 
     public static PrefixMain getInstance() { return instance; }
 

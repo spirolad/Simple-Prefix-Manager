@@ -9,3 +9,11 @@ default-format:
   name: "%prefix% %color%%player%"
 use-permission: false
 format-permission: "spm.prefix.%prefix_name%"
+prefix-plugin: "&2SPM"
+default-prefix: "player"
+MySQL:
+  ip: "ip"
+  user: "user"
+  password: "password"
+  database: "database"
+  use-sql: false

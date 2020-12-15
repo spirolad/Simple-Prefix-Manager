@@ -10,6 +10,7 @@ public class ConfigData {
     private String defaultTab, defaultName, defaultChat, defaultColor;
     private String formatChat, formatTab, formatName;
     private String formatPermission;
+    private String defaultPrefix;
     private boolean usePermission;
 
     public ConfigData(Configuration config){
@@ -37,6 +38,9 @@ public class ConfigData {
 
         // Load the plugin prefix
         this.prefixPlugin = config.getString("prefix-plugin");
+
+        // Load the default prefix
+        this.defaultPrefix = config.getString("default-prefix");
     }
 
     public static ConfigData getInstance() { return instance; }
@@ -77,5 +81,8 @@ public class ConfigData {
 
     public void setUsePermission(boolean usePermission) { this.usePermission = usePermission; }
 
+    public String getDefaultPrefix() { return defaultPrefix; }
+
+    public void setDefaultPrefix(String defaultPrefix) { this.defaultPrefix = defaultPrefix; }
 
 }

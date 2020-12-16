@@ -3,6 +3,7 @@ package com.seizonia.spm;
 import com.seizonia.spm.data.DataMain;
 import com.seizonia.spm.listener.PlayerJoin;
 import com.seizonia.spm.listener.PlayerQuit;
+import com.seizonia.spm.listener.SendMessageListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,14 +15,12 @@ public class PrefixMain extends JavaPlugin {
     private static PrefixMain instance;
     private DataMain dataMain;
 
-    public static final String NMS_VERSION = Bukkit.getServer().getClass().getPackage().getName().substring(23);
-
     @Override
     public void onEnable() {
         instance = this;
+        loadFileRessource();
         this.dataMain = new DataMain(getConfig());
         dataMain.loadPrefix();
-        loadFileRessource();
         loadListener();
     }
 
@@ -48,6 +47,7 @@ public class PrefixMain extends JavaPlugin {
     private void loadListener(){
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         getServer().getPluginManager().registerEvents(new PlayerQuit(), this);
+        getServer().getPluginManager().registerEvents(new SendMessageListener(), this);
     }
 
     private void copyFileRessources(File destination, String ressourceName){
@@ -56,10 +56,7 @@ public class PrefixMain extends JavaPlugin {
         if (!destination.exists()) {
             getLogger().severe("Creation of file " + ressourceName + "...");
             try {
-                // read this file into InputStream
                 inputStream = getResource(ressourceName + ".yml");
-
-                // write the inputStream to a FileOutputStream
                 outputStream = new FileOutputStream(destination);
 
                 int read = 0;

@@ -1,12 +1,17 @@
 default-prefix-format:
   tab: "%prefix_name%"
   chat: "(%prefix_name%)"
-  name: "%prefix_name"
   color: "§f"
 default-format:
-  tab: "%prefix%  %color%%player%"
-  chat: "%prefix% %color%%player% §f: %color%%message"
-  name: "%prefix% %color%%player%"
+  tab: "%prefix% %color%%player%"
+  chat: "%prefix% %color%%player% §f: %color%%message%"
 use-permission: false
 format-permission: "spm.prefix.%prefix_name%"
 prefix-plugin: "&2SPM"
+default-prefix: "player"
+MySQL:
+  ip: "ip"
+  user: "user"
+  password: "password"
+  database: "database"
+  use-sql: false

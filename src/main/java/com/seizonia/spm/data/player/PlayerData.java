@@ -47,18 +47,15 @@ public class PlayerData {
         PlayerChangePrefixEvent playerChangePrefixEvent = new PlayerChangePrefixEvent(player, newPrefix);
         Bukkit.getPluginManager().callEvent(playerChangePrefixEvent);
         if(playerChangePrefixEvent.isCancelled()) return;
-        if(!newPrefix.isHideTab()) player.setPlayerListName(ChatColor.translateAlternateColorCodes('&' ,convert(CONFIG.getFormatTab(), player, newPrefix)));
-        this.chatPlayer = (!newPrefix.isHideChat()) ? ChatColor.translateAlternateColorCodes('&' ,convert(CONFIG.getFormatChat(), player, newPrefix)) : null;
-        if(!newPrefix.isHideName()) changeDisplayName(player, newPrefix);
+        if(!newPrefix.isHideTab()) player.setPlayerListName(ChatColor.translateAlternateColorCodes('&' , convert(CONFIG.getFormatTab(), player, newPrefix, newPrefix.getPrefixTab())));
+        this.chatPlayer = (!newPrefix.isHideChat()) ?
+                ChatColor.translateAlternateColorCodes('&' , convert(CONFIG.getFormatChat(), player, newPrefix, newPrefix.getPrefixChat())) :
+                ChatColor.translateAlternateColorCodes('&', convert(CONFIG.getFormatChat(), player, newPrefix, ""));
         this.prefixEquip = prefix;
     }
 
-    private void changeDisplayName(Player player, PrefixData prefix) {
-        TagBuilder.setTag(player, name, ChatColor.translateAlternateColorCodes('&' ,convert(CONFIG.getFormatName(), player, prefix)), "");
-    }
-
-    private String convert(String format, Player player, PrefixData prefixData){
-        return format.replace("%prefix%", prefixData.getPrefixTab())
+    private String convert(String format, Player player, PrefixData prefixData, String prefixFormat){
+        return format.replace("%prefix%", prefixFormat)
                 .replace("%color%", prefixData.getColor())
                 .replace("%player%", player.getName());
     }

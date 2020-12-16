@@ -89,7 +89,6 @@ public class DataManageYml implements DataManage {
                     prefix,
                     sectionPrefix.getString(prefix + ".format-tab"),
                     sectionPrefix.getString(prefix + ".format-chat"),
-                    sectionPrefix.getString(prefix + ".format-name"),
                     sectionPrefix.getString(prefix + ".color"),
                     sectionPrefix.getBoolean(prefix + ".hideTab"),
                     sectionPrefix.getBoolean(prefix + ".hideChat"),
@@ -107,7 +106,6 @@ public class DataManageYml implements DataManage {
             String path = "prefix-list." + prefixData.getName();
             sectionPrefix.set(path + ".format-tab", prefixData.getPrefixTab());
             sectionPrefix.set(path + ".format-chat", prefixData.getPrefixChat());
-            sectionPrefix.set(path + ".format-name", prefixData.getPrefixName());
             sectionPrefix.set(path + ".color", prefixData.getColor());
             sectionPrefix.set(path + ".hideTab", prefixData.isHideTab());
             sectionPrefix.set(path + ".hideChat", prefixData.isHideChat());

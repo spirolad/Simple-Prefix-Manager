@@ -7,7 +7,7 @@ public class ConfigData {
 
     private static ConfigData instance;
     private String prefixPlugin;
-    private String defaultTab, defaultName, defaultChat, defaultColor;
+    private String defaultTab, defaultChat, defaultColor;
     private String formatChat, formatTab, formatName;
     private String formatPermission;
     private String defaultPrefix;
@@ -20,7 +20,6 @@ public class ConfigData {
         ConfigurationSection sectionDefault = config.getConfigurationSection("default-prefix-format");
         assert sectionDefault != null;
         this.defaultTab = sectionDefault.getString("tab");
-        this.defaultName = sectionDefault.getString("name");
         this.defaultChat = sectionDefault.getString("chat");
         this.defaultColor = sectionDefault.getString("color");
 
@@ -48,10 +47,6 @@ public class ConfigData {
     public String getDefaultTab() { return defaultTab; }
 
     public void setDefaultTab(String defaultTab) { this.defaultTab = defaultTab; }
-
-    public String getDefaultName() { return defaultName; }
-
-    public void setDefaultName(String defaultName) { this.defaultName = defaultName; }
 
     public String getDefaultChat() { return defaultChat; }
 

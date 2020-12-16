@@ -34,7 +34,6 @@ public class TagBuilder {
         if (prefix != null) prefixLength = prefix.length();
         if (suffix != null) suffixLength = suffix.length();
         if (prefixLength >= 32) {
-            player.sendMessage("§eVotre préfixe est trop grand ! Contactez un administrateur pour règler le problème");
             System.out.println("Problème de taile de préfixe: " + prefix + player.getName());
             throw new Exception("prefix and suffix lenghts are greater than 16");
         }

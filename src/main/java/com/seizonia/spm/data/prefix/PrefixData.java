@@ -3,14 +3,13 @@ package com.seizonia.spm.data.prefix;
 public class PrefixData {
 
     private final String name;
-    private String prefixTab, prefixChat, prefixName, color;
+    private String prefixTab, prefixChat, color;
     private boolean hideTab, hideChat, hideName;
 
-    public PrefixData(String name, String prefixTab, String prefixChat, String prefixName, String color, boolean hideTab, boolean hideChat, boolean hideName) {
+    public PrefixData(String name, String prefixTab, String prefixChat, String color, boolean hideTab, boolean hideChat, boolean hideName) {
         this.name = name;
         this.prefixTab = prefixTab;
         this.prefixChat = prefixChat;
-        this.prefixName = prefixName;
         this.color = color;
         this.hideTab = hideTab;
         this.hideChat = hideChat;
@@ -28,9 +27,6 @@ public class PrefixData {
             case COLOR:
                 this.color = newContent;
                 break;
-            case NAME:
-                this.prefixName = newContent;
-                break;
         }
     }
 
@@ -39,8 +35,6 @@ public class PrefixData {
     public String getPrefixTab() { return prefixTab; }
 
     public String getPrefixChat() { return prefixChat; }
-
-    public String getPrefixName() { return prefixName; }
 
     public String getColor() { return color; }
 

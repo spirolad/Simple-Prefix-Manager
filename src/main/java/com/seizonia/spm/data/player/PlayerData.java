@@ -1,7 +1,7 @@
 package com.seizonia.spm.data.player;
 
 import com.seizonia.spm.PrefixMain;
-import com.seizonia.spm.api.PlayerChangePrefixEvent;
+import com.seizonia.spm.api.customEvent.PlayerChangePrefixEvent;
 import com.seizonia.spm.data.DataMain;
 import com.seizonia.spm.data.config.ConfigData;
 import com.seizonia.spm.data.prefix.PrefixData;

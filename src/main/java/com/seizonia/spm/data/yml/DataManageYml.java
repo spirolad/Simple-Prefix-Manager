@@ -78,7 +78,6 @@ public class DataManageYml implements DataManage {
 
     @Override
     public void loadPrefix() {
-        System.out.println("LOAD PREFIX");
         File filePrefix = new File(PREFIX_MAIN.getDataFolder(), "prefix.yml");
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(filePrefix);
         ConfigurationSection sectionPrefix = yml.getConfigurationSection("prefix-list");

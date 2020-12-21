@@ -1,4 +1,4 @@
-package com.seizonia.spm.api;
+package com.seizonia.spm.api.customEvent;
 
 import com.seizonia.spm.data.prefix.PrefixData;
 import org.bukkit.entity.Player;

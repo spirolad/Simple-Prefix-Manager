@@ -24,9 +24,7 @@ public class DataMain {
         this.dataManage = (config.getBoolean("MySQL.use-sql")) ? new DataManageSql() : new DataManageYml();
     }
 
-    public void loadPrefix(){
-        dataManage.loadPrefix();
-    }
+    public void loadPrefix(){ dataManage.loadPrefix(); }
 
     public void save(PlayerData playerData){ dataManage.save(playerData);}
 

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SqlAPI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../SqlAPI/target/SqlAPI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
